@@ -1,0 +1,16 @@
+[ignore]
+# Ignore compiled code.
+<PROJECT_ROOT>/lib/.*
+
+# Ugh
+.*node_modules/fbjs.*
+
+[include]
+
+[libs]
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+suppress_type=$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
