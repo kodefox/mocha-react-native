@@ -5,7 +5,7 @@ This is a collection of helpers to get Mocha tests working nicely with React Nat
 ## How to use
 
 ```
-$ npm install mocha-react-native
+$ npm install --save-dev mocha-react-native
 ```
 
 Create a file in your project: `test/mocha.opts`
@@ -25,7 +25,9 @@ Create a file in your project: `test/mocks.js`
 Add some code using `addAlias` and/or `addMock`:
 ```js
 import {addAlias, addMock} from 'mocha-react-native';
+
 addAlias('react-native-linear-gradient', 'actual-empty-object');
+
 addMock('exponent', {
   Font: {
     style: () => ({fontFamily: ''}),
