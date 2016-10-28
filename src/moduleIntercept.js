@@ -19,23 +19,19 @@ let Module = OriginalModule;
 
 export function addAlias(name: string, aliasName: string) {
   aliasModules[name] = aliasName;
-  if (!isPatched()) {
-    patchModule();
-  }
+  patchModule();
 }
 
 export function addMock(name: string, exports: mixed) {
   mockModules[name] = exports;
-  if (!isPatched()) {
-    patchModule();
+  patchModule();
+}
+
+export function patchModule() {
+  let isPatched = (isPatchedMap.get(Module) === true);
+  if (isPatched) {
+    return;
   }
-}
-
-function isPatched() {
-  return isPatchedMap.get(Module) === true;
-}
-
-function patchModule() {
   const originalLoader = Module._load;
   Module._load = (request, parent, ...others) => {
     if (request.match(RN_STATIC_RESOURCE)) {
