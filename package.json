@@ -12,7 +12,8 @@
     "test": "npm run lint && npm run typecheck && npm run test-src"
   },
   "dependencies": {
-    "babel-core": "^6.18.0"
+    "babel-core": "^6.18.0",
+    "react-native-mock": "^0.2.7"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
