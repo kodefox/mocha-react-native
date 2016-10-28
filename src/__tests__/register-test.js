@@ -6,7 +6,7 @@ import * as babel from 'babel-core';
 import expect from 'expect';
 import Module from 'module';
 import {setHandler} from './helpers/setHandler';
-import '../register';
+import {addPackage} from '../register';
 
 type ModuleType = typeof Module;
 
@@ -86,6 +86,13 @@ describe('register', () => {
 
   it('should compile node module for react-native', () => {
     let fileName = './node_modules/react-native-foo/bar.js';
+    let result = shouldCompile(fileName);
+    expect(result).toBe(`compiled:transformed:contents:${fileName}`);
+  });
+
+  it('should compile whitelisted packages', () => {
+    let fileName = './node_modules/react-foo/bar.js';
+    addPackage('react-foo');
     let result = shouldCompile(fileName);
     expect(result).toBe(`compiled:transformed:contents:${fileName}`);
   });
