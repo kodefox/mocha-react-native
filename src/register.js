@@ -21,6 +21,8 @@ extensions[JS] = (module, fileName) => {
   }
   let src = fs.readFileSync(fileName, 'utf8');
   let output = transform(src, {
+    babelrc: false,
+    presets: ['react-native-mocha'],
     filename: fileName,
     sourceFileName: fileName,
   });
