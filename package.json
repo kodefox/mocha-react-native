@@ -1,6 +1,6 @@
 {
   "name": "mocha-react-native",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "mocha-react-native",
   "main": "lib/main.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "babel-core": "^6.18.0",
     "babel-preset-react-native-mocha": "^1.9.0",
-    "react-native-mock": "^0.2.7"
+    "react-native-mock": "0.2.7"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
